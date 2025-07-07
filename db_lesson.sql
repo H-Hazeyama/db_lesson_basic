@@ -104,3 +104,7 @@ WHERE NOT EXISTS (
   SELECT * FROM reports r
   WHERE p.person_id = r.person_id
 );
+-- Q11 OUTER JOINで書き直す
+SELECT p.name
+FROM people p LEFT OUTER JOIN reports r USING (person_id)
+WHERE r.content is NULL;
