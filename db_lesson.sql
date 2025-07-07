@@ -76,7 +76,7 @@ ORDER BY age DESC;
 ```
 
 -- Q7
-SELECT name, age
+SELECT name -- SELECT文を修正
 FROM people
 WHERE
 gender = 2 AND age BETWEEN 20 AND 29 OR
@@ -99,7 +99,7 @@ FROM (people p JOIN departments d USING(department_id))
 JOIN reports r USING (person_id);
 
 -- Q11
-SELECT p.name, p.person_id FROM people p
+SELECT p.name FROM people p -- SELECT文を修正
 WHERE NOT EXISTS (
   SELECT * FROM reports r
   WHERE p.person_id = r.person_id
